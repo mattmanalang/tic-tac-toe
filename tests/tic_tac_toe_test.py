@@ -14,6 +14,19 @@ class TestTicTacToe(unittest.TestCase):
         game = TicTacToe()
         self.assertEqual(game.get_game_state(), [['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']])
 
+    def test_one_move(self):
+        """Check the state of the game after Player 1 makes their first move."""
+        game = TicTacToe()
+        game.place_piece("b2")
+        self.assertEqual(game.get_game_state(), [['-', '-', '-'], ['-', '-', 'X'], ['-', '-', '-']])
+
+    def test_two_moves(self):
+        """Check the state of the game after Player 1 & 2 make their first moves."""
+        game = TicTacToe()
+        game.place_piece("b2")
+        game.place_piece("a0")
+        self.assertEqual(game.get_game_state(), [['O', '-', '-'], ['-', '-', 'X'], ['-', '-', '-']])
+
 
 # Use only if you are testing directly from running this file.
 if __name__ == "__main__":

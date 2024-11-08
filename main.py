@@ -4,3 +4,4 @@ from tic_tac_toe import TicTacToe
 
 
 game = TicTacToe()
+game.display_board()
