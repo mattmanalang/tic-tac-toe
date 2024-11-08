@@ -30,10 +30,12 @@ c  {self.board[2][0]}  |  {self.board[2][1]}  |  {self.board[2][2]}
     def place_piece(self, location_string):
         """Places an 'X' or 'O' on the board using the format [ROW][COLUMN]. Example: b2"""
         # Do stuff to the game board
+        # TODO: Validate user input for placing their piece.
         target_row = self.row_map.get(location_string[0])
         target_col = int(location_string[1])
-        # TODO: Check to see if the target cell has already been claimed.
-        self.board[target_row][target_col] = 'X' if self.current_player == 1 else 'O'
+        if self.board[target_row][target_col] != '-':  # Cell has already been claimed
+            return False
 
+        self.board[target_row][target_col] = 'X' if self.current_player == 1 else 'O'
         self.current_player = 1 if self.current_player == 2 else 2
-        return self.board
+        return True
