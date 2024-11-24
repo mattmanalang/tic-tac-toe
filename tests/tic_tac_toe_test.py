@@ -28,7 +28,7 @@ class TestTicTacToe(unittest.TestCase):
         self.assertEqual(game.get_game_state(), [['O', '-', '-'], ['-', '-', 'X'], ['-', '-', '-']])
 
     def test_conflicting_move(self):
-        """Check the state of the game after PLayer 2 tries to claim Player 1's cell."""
+        """Check the state of the game after Player 2 tries to claim Player 1's cell."""
         game = TicTacToe()
         game.place_piece("b2")
         game.place_piece("a0")
