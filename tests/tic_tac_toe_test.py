@@ -73,8 +73,9 @@ class TestTicTacToe(unittest.TestCase):
     def test_no_winner(self):
         """Check the condition in which neither player wins. All spaces have been used up."""
         game = TicTacToe()
-        game.board = [["X", "O", "X"], ["X", "O", "O"], ["O", "O", "X"]]
-        self.assertEqual(game.check_board(), -1)
+        game.board = [["X", "O", "X"], ["X", "O", "X"], ["O", "X", "O"]]
+        game.moves_made = 9
+        self.assertEqual(game.check_board(), -999)
 
 # Use only if you are testing directly from running this file.
 if __name__ == "__main__":
